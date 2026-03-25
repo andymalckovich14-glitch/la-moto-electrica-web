@@ -5,12 +5,10 @@ import Discography from "./components/Discography";
 import Player from "./components/Player";
 import Latest from "./components/Latest";
 import Footer from "./components/Footer";
-import React from "react";
-import ReactDOM from "react-dom";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Hero />
       <About />
       <Discography />

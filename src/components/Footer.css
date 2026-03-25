@@ -1,23 +1,11 @@
-/* --- CONTENEDOR GENERAL DEL FOOTER --- */
 .footer-section {
   padding: 60px 20px 40px;
-  /* En lugar de negro sólido, usamos un negro con transparencia (0.8) */
-  .about-section,
-  .disco-section,
-  .footer-section {
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.85
-    ); /* El 0.85 deja ver la foto de fondo muy sutilmente */
-    /* O si quieres que se vea TOTALMENTE la foto, usa: background: transparent; */
-  }
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   text-align: center;
-
-  /* CAMBIO AQUÍ: Elimina cualquier borde */
   border-top: none;
-  margin-top: -1px; /* Este truco de "píxel negativo" cierra cualquier grieta rebelde */
+  margin-top: -1px;
 }
 
 .footer-container {
@@ -25,12 +13,11 @@
   margin: 0 auto;
 }
 
-/* --- REDES SOCIALES (Compacto y Minimalista) --- */
 .footer-social {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 30px; /* Espacio reducido con la siguiente sección */
+  margin-bottom: 30px;
 }
 
 .social-link {
@@ -39,7 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.4; /* Estilo Shoegaze: tenue por defecto */
+  opacity: 0.4;
   transition: all 0.4s ease-in-out;
 }
 
@@ -60,13 +47,12 @@
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
-/* --- SECCIÓN DE CONTACTO (Pegada a las redes) --- */
 .footer-contact h3 {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 20px;
-  color: #555; /* Gris sutil */
+  color: #555;
   font-weight: 300;
 }
 
@@ -91,7 +77,7 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #444; /* Más oscuro para que resalte el número */
+  color: #444;
   margin-bottom: 4px;
 }
 
@@ -106,24 +92,19 @@
   transform: translateY(-2px);
 }
 
-/* --- CRÉDITOS FINALES --- */
 .footer-bottom {
-  border-top: 1px solid #111;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 30px;
 }
 
 .footer-bottom p {
   font-size: 0.65rem;
-  color: #222;
+  color: #333;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-/* --- RESPONSIVIDAD --- */
 @media (max-width: 600px) {
-  .footer-social {
-    gap: 25px;
-  }
   .whatsapp-links {
     flex-direction: column;
     gap: 25px;

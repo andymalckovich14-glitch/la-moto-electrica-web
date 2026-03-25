@@ -1,59 +1,50 @@
-/* --- SECCIÓN DE DISCOGRAFÍA --- */
 .disco-section {
   padding: 80px 20px;
-  /* En lugar de negro sólido, usamos un negro con transparencia (0.8) */
-  .about-section,
-  .disco-section,
-  .footer-section {
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.85
-    ); /* El 0.85 deja ver la foto de fondo muy sutilmente */
-    /* O si quieres que se vea TOTALMENTE la foto, usa: background: transparent; */
-  }
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.85
+  ); /* Ahora sí se aplicará la transparencia */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .disco-title {
   text-align: center;
   font-size: 2.2rem;
-  letter-spacing: 8px; /* Espaciado estilo Post-Rock */
+  letter-spacing: 8px;
   text-transform: uppercase;
   margin-bottom: 50px;
   font-weight: 300;
   color: #fff;
 }
 
-/* --- GRID DE DISCOS (AJUSTADO PARA TAMAÑO PEQUEÑO) --- */
 .disco-grid {
   display: grid;
-  /* Intentará meter tantos cuadros de 180px como quepan */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 25px;
-  max-width: 950px; /* Contenedor más estrecho para que no se vean gigantes */
+  max-width: 950px;
   margin: 0 auto;
 }
 
-/* --- TARJETA DE DISCO --- */
 .disco-card {
   position: relative;
-  text-decoration: none; /* Quita subrayado de link */
+  text-decoration: none;
   color: #fff;
   overflow: hidden;
-  aspect-ratio: 1 / 1; /* Siempre cuadrado */
-  border: 1px solid #1a1a1a;
-  max-width: 220px; /* Límite de ancho para cada cuadro */
-  margin: 0 auto; /* Centra la tarjeta en su columna */
-  transition: border 0.3s ease;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 220px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .disco-card:hover {
-  border-color: #444; /* Borde se ilumina sutilmente */
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* La imagen de portada */
 .disco-cover {
   width: 100%;
   height: 100%;
@@ -61,31 +52,29 @@
   transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* --- EFECTO HOVER (OVERLAY) --- */
 .disco-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75); /* Fondo oscuro al pasar el mouse */
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0; /* Invisible por defecto */
+  opacity: 0;
   transition: opacity 0.4s ease;
-  backdrop-filter: blur(5px); /* Toque difuso y etéreo */
+  backdrop-filter: blur(5px);
 }
 
 .disco-card:hover .disco-overlay {
-  opacity: 1; /* Aparece al pasar el mouse */
+  opacity: 1;
 }
 
 .disco-card:hover .disco-cover {
-  transform: scale(1.1); /* Zoom suave a la portada */
+  transform: scale(1.1);
 }
 
-/* --- INFORMACIÓN DEL DISCO --- */
 .disco-info {
   text-align: center;
   padding: 15px;
@@ -112,7 +101,6 @@
   display: block;
 }
 
-/* El botón pequeño de Spotify */
 .spotify-hint {
   margin-top: 15px;
   font-size: 0.6rem;
@@ -123,13 +111,12 @@
   display: inline-block;
 }
 
-/* Estilo para el cuadro misterioso */
 .mystery-card {
   background: linear-gradient(45deg, #050505, #111);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #333; /* Borde discontinuo para dar sensación de "en construcción" */
+  border: 1px dashed #333;
 }
 
 .mystery-content {
@@ -153,13 +140,11 @@
   color: #888;
 }
 
-/* Animación cuando pasas el mouse por el cuadro misterioso */
 .mystery-card:hover .mystery-content {
   opacity: 1;
   transform: scale(1.1);
 }
 
-/* Toque final: que el símbolo de interrogación "brille" suavemente */
 .mystery-card:hover .mystery-icon {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }

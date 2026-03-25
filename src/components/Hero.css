@@ -9,68 +9,56 @@
   align-items: center;
   text-align: center;
   color: white;
-  background: transparent; /* <--- Asegúrate de que sea transparente */
 }
 
-/* --- IMAGEN DE FONDO CON ZOOM CINEMÁTICO --- */
+/* --- IMAGEN DE FONDO GLOBAL --- */
 .hero-background {
-  position: fixed; /* <--- CAMBIO CLAVE: Se queda pegado a la pantalla */
+  position: fixed; /* Clavada al fondo de la pantalla */
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: -1; /* Detrás de todo el contenido */
 
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
-    url(../assets/close.jpg);
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url("../assets/close.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
-  /* Mantenemos tu animación Ken Burns */
+  /* Aplicamos el zoom cinemático */
   animation: cinematicZoom 30s infinite alternate linear;
-
-  /* Lo mandamos al fondo de TODO el sitio */
-  z-index: -1;
 }
 
-/* --- CONTENEDOR DEL TEXTO (Encima del fondo) --- */
 .hero-content {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* --- TÍTULO (Mantenemos tu fuente y tamaño exacto) --- */
+/* --- TÍTULO --- */
 .hero-title {
-  font-size: 5rem; /* Misma fuente y tamaño */
+  font-size: 5rem;
   margin: 0;
-  letter-spacing: 10px; /* Tus letras súper separadas */
+  letter-spacing: 10px;
   text-transform: uppercase;
-
-  /* Tu efecto de resplandor (Glow) etéreo */
   text-shadow:
     0 0 20px rgba(255, 255, 255, 0.3),
     0 0 40px rgba(255, 255, 255, 0.1);
-
-  /* Tu animación Breathe */
   animation: breathe 5s infinite alternate ease-in-out;
 }
 
-/* --- SUBTÍTULO (Mantenemos tus ajustes) --- */
 .hero-subtitle {
-  font-size: 1.1rem; /* Tu tamaño */
-  letter-spacing: 6px; /* Tu aire entre letras */
+  font-size: 1.1rem;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7); /* Tu blanco transparente */
+  color: rgba(255, 255, 255, 0.7);
   margin-top: 10px;
 }
 
-/* --- DEFINICIÓN DE ANIMACIONES --- */
-
-/* Tu animación original para que el título palpite */
+/* --- ANIMACIONES --- */
 @keyframes breathe {
   0% {
     opacity: 0.8;
@@ -84,23 +72,20 @@
   }
 }
 
-/* Nueva animación para el zoom cinemático del fondo */
 @keyframes cinematicZoom {
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1); /* Zoom suave del 10% */
+    transform: scale(1.1);
   }
 }
 
-/* Ajuste para celulares (Manteniendo tus medidas) */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
     letter-spacing: 5px;
   }
-
   .hero-subtitle {
     font-size: 0.9rem;
     letter-spacing: 4px;
