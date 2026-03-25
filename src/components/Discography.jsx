@@ -1,6 +1,5 @@
 import "./Discography.css";
 
-// 1. IMPORTA TUS 7 PORTADAS AQUÍ
 import portada1 from "../assets/portada1.jpg";
 import portada2 from "../assets/portada2.png";
 import portada3 from "../assets/portada3.jpg";
@@ -74,7 +73,6 @@ function Discography() {
       <div className="disco-container">
         <h2 className="disco-title">Discografía</h2>
         <div className="disco-grid">
-          {/* Los 7 discos actuales */}
           {albums.map((album) => (
             <a
               href={album.url}
@@ -99,7 +97,6 @@ function Discography() {
             </a>
           ))}
 
-          {/* 8vo CUADRO: EL MISTERIO */}
           <div className="disco-card mystery-card">
             <div className="mystery-content">
               <span className="mystery-icon">?</span>

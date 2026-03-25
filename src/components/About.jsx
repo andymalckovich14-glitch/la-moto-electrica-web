@@ -1,28 +1,23 @@
 import "./About.css";
-// Importamos Swiper y sus herramientas
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-// Importamos los estilos obligatorios de Swiper
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// IMPORTA TUS FOTOS AQUÍ
 import foto1 from "../assets/foto1.jpg";
 import foto2 from "../assets/foto2.jpg";
 import foto3 from "../assets/foto3.jpg";
 import foto4 from "../assets/foto4.jpg";
 import foto5 from "../assets/foto5.jpg";
 
-// 1. IMPORTAMOS EL LOGO PNG
 import logo from "../assets/logo.png";
 
 function About() {
   return (
     <section className="about-section">
       <div className="about-container">
-        {/* Columna Izquierda: El Texto */}
         <div className="about-text">
           <h2>Nosotros</h2>
           <p>
@@ -37,11 +32,9 @@ function About() {
             expedita molestias quia!
           </p>
 
-          {/* 2. EL LOGO APARECE AQUÍ ABAJO DEL TEXTO */}
           <img src={logo} alt="Logo La Moto Eléctrica" className="about-logo" />
         </div>
 
-        {/* Columna Derecha: EL CARRUSEL */}
         <div className="about-image-container">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}

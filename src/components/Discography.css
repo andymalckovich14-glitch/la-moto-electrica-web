@@ -1,11 +1,6 @@
 .disco-section {
   padding: 80px 20px;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.85
-  ); /* Ahora sí se aplicará la transparencia */
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }

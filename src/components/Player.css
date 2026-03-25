@@ -1,17 +1,15 @@
-/* Contenedor posicionado abajo a la izquierda */
 .player-fixed-container {
   position: fixed;
   bottom: 25px;
-  right: 25px; /* Anclado a la derecha */
-  left: auto; /* Esto asegura que no haya conflicto si antes había un left */
+  right: 25px;
+  left: auto;
   width: auto;
   z-index: 1000;
 }
 
-/* El marco del reproductor */
 .player-spotify-wrapper {
-  width: 400px; /* Lo hacemos un poco más compacto para la esquina */
-  max-width: 85vw; /* Evita que se salga en pantallas pequeñas */
+  width: 400px;
+  max-width: 85vw;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -26,7 +24,6 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Ajuste para que en móviles muy pequeños se mantenga bien posicionado */
 @media (max-width: 480px) {
   .player-fixed-container {
     left: 10px;
@@ -34,6 +31,6 @@
   }
 
   .player-spotify-wrapper {
-    width: 280px; /* Más pequeño aún para celulares */
+    width: 280px;
   }
 }

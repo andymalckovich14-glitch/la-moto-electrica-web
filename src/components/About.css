@@ -1,20 +1,20 @@
 .about-section {
-  background-color: #0a0a0a; /* Un fondo súper oscuro para mantener la vibra */
+  background-color: #0a0a0a;
   color: #f0f0f0;
-  padding: 80px 20px; /* Espacio arriba/abajo y a los lados */
+  padding: 80px 20px;
   display: flex;
-  justify-content: center; /* Centra todo en la pantalla */
+  justify-content: center;
 }
 
 .about-container {
-  max-width: 1000px; /* Evita que el texto se estire demasiado en monitores grandes */
+  max-width: 1000px;
   display: flex;
-  gap: 50px; /* Crea un espacio elegante entre el texto y la foto */
-  align-items: center; /* Alinea ambas columnas al centro verticalmente */
+  gap: 50px;
+  align-items: center;
 }
 
 .about-text {
-  flex: 1; /* Le dice que ocupe exactamente la mitad del espacio */
+  flex: 1;
 }
 
 .about-text h2 {
@@ -27,14 +27,13 @@
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #bababa; /* Un gris claro para que no canse la vista */
+  color: #bababa;
 }
 
 .about-image-container {
-  flex: 1; /* Ocupa la otra mitad del espacio */
+  flex: 1;
 }
 
-/* Esta es la caja falsa mientras pones tu foto real */
 .image-placeholder {
   background-color: #222222;
   width: 100%;
@@ -48,23 +47,20 @@
   border: 1px dashed #444444;
 }
 
-/* Aseguramos que el contenedor no se desborde */
 .about-image-container {
   flex: 1;
   width: 100%;
   max-width: 500px;
 }
 
-/* Estilo para las fotos DENTRO del carrusel */
 .carousel-photo {
   width: 100%;
   height: 350px;
-  object-fit: cover; /* Recorta la foto perfecto sin deformarla */
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Estilos para personalizar las flechas y puntitos de Swiper --- */
 .swiper-button-next,
 .swiper-button-prev {
   color: #ffffff !important;
@@ -81,10 +77,9 @@
   opacity: 1;
 }
 
-/* --- FIX PARA TELÉFONOS (La magia responsiva) --- */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column; /* Apila el texto arriba y la foto abajo en celulares */
+    flex-direction: column;
     text-align: center;
   }
 
@@ -93,11 +88,10 @@
   }
 
   .carousel-photo {
-    height: 300px; /* Un poco más pequeña en móviles */
+    height: 300px;
   }
 }
 
-/* Toque Shoegaze: Hacemos el texto un poco más espaciado y etéreo */
 .about-text p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -106,10 +100,10 @@
 }
 
 .about-logo {
-  width: 100px; /* Tamaño pequeño */
+  width: 100px;
   height: auto;
-  margin: 30px auto 0 auto; /* 30px arriba, auto a los lados (centra), 0 abajo */
-  display: block; /* Obligatorio para que funcione el margin auto */
+  margin: 30px auto 0 auto;
+  display: block;
 
   opacity: 0.8;
   transition:
@@ -122,8 +116,6 @@
   transform: scale(1.1);
 }
 
-/* Opcional: Si quieres asegurar que todo el bloque de texto y logo 
-   se comporte bien en pantallas pequeñas */
 @media (max-width: 768px) {
   .about-text {
     display: flex;

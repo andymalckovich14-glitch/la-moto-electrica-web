@@ -1,5 +1,4 @@
 import "./Footer.css";
-// 1. IMPORTAMOS LOS LOGOS (Instalados en el paso anterior)
 import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 
 function Footer() {
@@ -9,7 +8,6 @@ function Footer() {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        {/* REDES SOCIALES CON LOGOS MINIMALISTAS */}
         <div className="footer-social">
           <a
             href="https://instagram.com/tu_usuario"

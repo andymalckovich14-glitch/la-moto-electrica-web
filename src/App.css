@@ -3,20 +3,18 @@
   background: transparent !important;
 }
 
-/* Obligamos a todas las secciones a ser transparentes */
 section,
 footer {
   background-color: transparent !important;
   padding: 100px 20px;
   position: relative;
-  z-index: 1; /* Por encima del fondo fijo */
+  z-index: 1;
 }
 .App {
   width: 100%;
   background: transparent;
 }
 
-/* Forzamos nitidez y transparencia absoluta en toda la web */
 section,
 footer,
 div[class*="-section"],
