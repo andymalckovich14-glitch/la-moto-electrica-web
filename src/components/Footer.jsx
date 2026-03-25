@@ -1,35 +1,77 @@
 import "./Footer.css";
+// 1. IMPORTAMOS LOS LOGOS (Instalados en el paso anterior)
+import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 
 function Footer() {
-  const currentYear = new Date().getFullYear(); // ¡Esto actualiza el año automáticamente!
+  const whatsapp1 = "https://wa.me/584165800779";
+  const whatsapp2 = "https://wa.me/584164941839";
 
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        <div className="footer-info">
-          <h3>La Moto Eléctrica</h3>
-          <p>Shoegaze / Rock Alternativo</p>
-          <p className="footer-location">Anaco, Venezuela</p>
+        {/* REDES SOCIALES CON LOGOS MINIMALISTAS */}
+        <div className="footer-social">
+          <a
+            href="https://instagram.com/tu_usuario"
+            target="_blank"
+            rel="noreferrer"
+            className="social-link"
+          >
+            <FaInstagram className="social-icon" />
+            <span>Instagram</span>
+          </a>
+
+          <a
+            href="http://googleusercontent.com/spotify.com/5"
+            target="_blank"
+            rel="noreferrer"
+            className="social-link"
+          >
+            <FaSpotify className="social-icon" />
+            <span>Spotify</span>
+          </a>
+
+          <a
+            href="https://youtube.com/@tu_canal"
+            target="_blank"
+            rel="noreferrer"
+            className="social-link"
+          >
+            <FaYoutube className="social-icon" />
+            <span>YouTube</span>
+          </a>
         </div>
 
-        <div className="footer-links">
-          {/* Cambia el # por los links reales de la banda */}
-          <a href="#" target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-          <a href="#" target="_blank" rel="noreferrer">
-            Spotify
-          </a>
-          <a href="#" target="_blank" rel="noreferrer">
-            YouTube
-          </a>
+        <div className="footer-contact">
+          <h3>Booking & Contacto</h3>
+          <div className="whatsapp-links">
+            <a
+              href={whatsapp1}
+              target="_blank"
+              rel="noreferrer"
+              className="wa-link"
+            >
+              <span>Contrataciones 1</span>
+              <strong>+58 416-5800779</strong>
+            </a>
+            <a
+              href={whatsapp2}
+              target="_blank"
+              rel="noreferrer"
+              className="wa-link"
+            >
+              <span>Contrataciones 2</span>
+              <strong>+58 416-4941839</strong>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div className="footer-bottom">
-        <p>
-          &copy; {currentYear} La Moto Eléctrica. Todos los derechos reservados.
-        </p>
+        <div className="footer-bottom">
+          <p>
+            © {new Date().getFullYear()} La Moto Eléctrica. Hecho en Anaco,
+            Venezuela.
+          </p>
+        </div>
       </div>
     </footer>
   );

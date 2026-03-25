@@ -1,0 +1,13 @@
+/* Esto obliga a que todas tus secciones dejen ver el fondo */
+.about-section,
+.disco-section,
+.latest-section,
+.footer-section {
+  background-color: rgba(0, 0, 0, 0.8) !important; /* El 0.8 es la clave */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.App {
+  background: transparent !important;
+}

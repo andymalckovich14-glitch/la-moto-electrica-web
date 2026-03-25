@@ -1,5 +1,16 @@
 .latest-section {
-  background-color: #0a0a0a; /* Mantiene el fondo súper oscuro de la web */
+  /* En lugar de negro sólido, usamos un negro con transparencia (0.8) */
+  .about-section,
+  .disco-section,
+  .footer-section {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.85
+    ); /* El 0.85 deja ver la foto de fondo muy sutilmente */
+    /* O si quieres que se vea TOTALMENTE la foto, usa: background: transparent; */
+  }
   color: #ffffff;
   padding: 80px 20px;
 }

@@ -8,12 +8,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// IMPORTA TUS FOTOS AQUÍ (Asegúrate de que los nombres coincidan con los tuyos en la carpeta assets)
+// IMPORTA TUS FOTOS AQUÍ
 import foto1 from "../assets/foto1.jpg";
 import foto2 from "../assets/foto2.jpg";
 import foto3 from "../assets/foto3.jpg";
 import foto4 from "../assets/foto4.jpg";
 import foto5 from "../assets/foto5.jpg";
+
+// 1. IMPORTAMOS EL LOGO PNG
+import logo from "../assets/logo.png";
 
 function About() {
   return (
@@ -33,6 +36,9 @@ function About() {
             soluta debitis, iure voluptas necessitatibus odio incidunt saepe
             expedita molestias quia!
           </p>
+
+          {/* 2. EL LOGO APARECE AQUÍ ABAJO DEL TEXTO */}
+          <img src={logo} alt="Logo La Moto Eléctrica" className="about-logo" />
         </div>
 
         {/* Columna Derecha: EL CARRUSEL */}
@@ -47,7 +53,6 @@ function About() {
             loop={true}
             className="mySwiper"
           >
-            {/* Diapositiva 1 */}
             <SwiperSlide>
               <img
                 src={foto1}
@@ -56,27 +61,21 @@ function About() {
               />
             </SwiperSlide>
 
-            {/* Diapositiva 2 */}
             <SwiperSlide>
               <img src={foto2} alt="Detalle" className="carousel-photo" />
             </SwiperSlide>
 
-            {/* Diapositiva 3 */}
             <SwiperSlide>
               <img src={foto3} alt="Detalle" className="carousel-photo" />
             </SwiperSlide>
 
-            {/* Diapositiva 4 */}
             <SwiperSlide>
               <img src={foto4} alt="Detalle" className="carousel-photo" />
             </SwiperSlide>
 
-            {/* Diapositiva 5 */}
             <SwiperSlide>
               <img src={foto5} alt="Detalle" className="carousel-photo" />
             </SwiperSlide>
-
-            {/* Puedes copiar y pegar más bloques <SwiperSlide> si tienes más fotos */}
           </Swiper>
         </div>
       </div>

@@ -1,12 +1,18 @@
-* {
+/* index.css */
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  /* El body DEBE ser transparente para ver el Hero que está atrás */
+  background-color: transparent !important;
 }
 
-body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow-x: hidden; /* Evita que la página se mueva hacia los lados */
+#root {
+  background-color: transparent !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }

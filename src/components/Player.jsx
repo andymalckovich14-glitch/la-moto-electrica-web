@@ -1,30 +1,28 @@
 import "./Player.css";
 
 function Player() {
-  return (
-    <section className="player-section">
-      <div className="player-container">
-        <h2>Escucha Nuestra Música</h2>
-        <p className="player-subtitle">
-          Las texturas más escuchadas de La Moto Eléctrica.
-        </p>
+  // 1. Ve a Spotify, busca tu canción/álbum, dale a "Compartir" -> "Insertar canción" (Embed).
+  // 2. Copia solo el link que está dentro del src="...".
+  // Debe verse algo como: https://open.spotify.com/embed/track/TU_ID_AQUI
 
-        {/* El contenedor del reproductor de Lista (¡Ahora en modo oscuro!) */}
-        <div className="iframe-container">
-          <iframe
-            data-testid="embed-iframe"
-            style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/artist/1VrmAzIcE04WB7gMS6fiM9?utm_source=generator&theme=0"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
+  const spotifyUrl =
+    "https://open.spotify.com/embed/artist/1VrmAzIcE04WB7gMS6fiM9?utm_source=generator";
+
+  return (
+    <div className="player-fixed-container">
+      <div className="player-spotify-wrapper">
+        <iframe
+          style={{ borderRadius: "12px" }}
+          src={spotifyUrl}
+          width="100%"
+          height="80"
+          frameBorder="0"
+          allowFullScreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -1,28 +1,39 @@
-.player-section {
-  background-color: #1a1a1a; /* Un gris un poquito más claro que el del About para que resalte */
-  color: #ffffff;
-  padding: 80px 20px;
-  text-align: center;
+/* Contenedor posicionado abajo a la izquierda */
+.player-fixed-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px; /* Anclado a la derecha */
+  left: auto; /* Esto asegura que no haya conflicto si antes había un left */
+  width: auto;
+  z-index: 1000;
 }
 
-.player-container {
-  max-width: 700px; /* Evitamos que el reproductor se estire demasiado en PC */
-  margin: 0 auto; /* Centra el contenedor en la pantalla */
+/* El marco del reproductor */
+.player-spotify-wrapper {
+  width: 400px; /* Lo hacemos un poco más compacto para la esquina */
+  max-width: 85vw; /* Evita que se salga en pantallas pequeñas */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
 }
 
-.player-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+.player-spotify-wrapper:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.player-subtitle {
-  color: #aaaaaa;
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-}
+/* Ajuste para que en móviles muy pequeños se mantenga bien posicionado */
+@media (max-width: 480px) {
+  .player-fixed-container {
+    left: 10px;
+    bottom: 15px;
+  }
 
-.iframe-container {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra elegante detrás del reproductor */
-  border-radius: 12px;
+  .player-spotify-wrapper {
+    width: 280px; /* Más pequeño aún para celulares */
+  }
 }
