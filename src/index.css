@@ -9,13 +9,12 @@ body,
 #root {
   width: 100%;
   min-height: 100vh;
-  background-color: transparent !important; /* Forzamos transparencia */
+  background-color: #050505; /* Fondo de seguridad */
   color: white;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
-/* Color de respaldo real si la imagen no carga */
 body {
-  background-color: #050505;
+  background: transparent;
 }

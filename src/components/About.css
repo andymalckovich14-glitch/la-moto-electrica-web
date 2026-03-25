@@ -1,120 +1,134 @@
-/* --- SECCIÓN GENERAL --- */
 .about-section {
-  background: transparent !important; /* <--- Cámbialo a transparente */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* EFECTO SHOEGAZE: Desenfoca el fondo para mejorar legibilidad */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
+  background-color: #0a0a0a; /* Un fondo súper oscuro para mantener la vibra */
   color: #f0f0f0;
-  padding: 100px 20px;
+  padding: 80px 20px; /* Espacio arriba/abajo y a los lados */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none; /* Evita líneas entre secciones */
+  justify-content: center; /* Centra todo en la pantalla */
 }
 
-/* --- CONTENEDOR (Texto a la izquierda, Fotos a la derecha) --- */
 .about-container {
-  max-width: 1100px;
-  width: 100%;
+  max-width: 1000px; /* Evita que el texto se estire demasiado en monitores grandes */
   display: flex;
-  gap: 60px;
-  align-items: center;
+  gap: 50px; /* Crea un espacio elegante entre el texto y la foto */
+  align-items: center; /* Alinea ambas columnas al centro verticalmente */
 }
 
-/* --- BLOQUE DE TEXTO --- */
 .about-text {
-  flex: 1.2; /* El texto tiene un poco más de peso visual */
-  text-align: left;
+  flex: 1; /* Le dice que ocupe exactamente la mitad del espacio */
 }
 
 .about-text h2 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
   color: #ffffff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  /* Sombra para despegar del fondo */
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .about-text p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  letter-spacing: 0.5px;
-  color: #a3a3a3; /* Gris suave shoegaze */
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #bababa; /* Un gris claro para que no canse la vista */
 }
 
-/* --- CONTENEDOR DE IMAGEN / CARRUSEL --- */
+.about-image-container {
+  flex: 1; /* Ocupa la otra mitad del espacio */
+}
+
+/* Esta es la caja falsa mientras pones tu foto real */
+.image-placeholder {
+  background-color: #222222;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: #666666;
+  font-style: italic;
+  border: 1px dashed #444444;
+}
+
+/* Aseguramos que el contenedor no se desborde */
 .about-image-container {
   flex: 1;
   width: 100%;
   max-width: 500px;
 }
 
+/* Estilo para las fotos DENTRO del carrusel */
 .carousel-photo {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 4px; /* Bordes rectos para un look más serio/indie */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  filter: grayscale(20%); /* Un toque desaturado para la estética */
+  height: 350px;
+  object-fit: cover; /* Recorta la foto perfecto sin deformarla */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* --- LOGO PEQUEÑO AL FINAL DEL TEXTO --- */
-.about-logo {
-  width: 110px;
-  height: auto;
-  margin: 30px 0 0 0; /* Alineado a la izquierda con el texto */
-  display: block;
-  opacity: 0.6;
-  transition: all 0.4s ease;
-  filter: brightness(0) invert(1); /* Lo fuerza a ser blanco puro */
-}
-
-.about-logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* --- PERSONALIZACIÓN SWIPER (Flechas y puntos) --- */
+/* --- Estilos para personalizar las flechas y puntitos de Swiper --- */
 .swiper-button-next,
 .swiper-button-prev {
   color: #ffffff !important;
-  transform: scale(0.6);
-  opacity: 0.5;
+  transform: scale(0.7);
 }
 
 .swiper-pagination-bullet {
   background: #ffffff !important;
+  opacity: 0.5;
 }
 
-/* --- RESPONSIVIDAD (Móviles y Tablets) --- */
-@media (max-width: 900px) {
-  .about-container {
-    flex-direction: column; /* Apila uno arriba del otro */
-    text-align: center;
-    gap: 40px;
-  }
+.swiper-pagination-bullet-active {
+  background: #ffffff !important;
+  opacity: 1;
+}
 
-  .about-text {
+/* --- FIX PARA TELÉFONOS (La magia responsiva) --- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Apila el texto arriba y la foto abajo en celulares */
     text-align: center;
   }
 
   .about-text h2 {
-    font-size: 2.2rem;
-  }
-
-  .about-logo {
-    margin: 30px auto 0 auto; /* Centra el logo en móvil */
+    font-size: 2rem;
   }
 
   .carousel-photo {
-    height: 300px;
+    height: 300px; /* Un poco más pequeña en móviles */
+  }
+}
+
+/* Toque Shoegaze: Hacemos el texto un poco más espaciado y etéreo */
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #a3a3a3;
+}
+
+.about-logo {
+  width: 100px; /* Tamaño pequeño */
+  height: auto;
+  margin: 30px auto 0 auto; /* 30px arriba, auto a los lados (centra), 0 abajo */
+  display: block; /* Obligatorio para que funcione el margin auto */
+
+  opacity: 0.8;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.about-logo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Opcional: Si quieres asegurar que todo el bloque de texto y logo 
+   se comporte bien en pantallas pequeñas */
+@media (max-width: 768px) {
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }

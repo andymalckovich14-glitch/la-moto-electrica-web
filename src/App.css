@@ -11,3 +11,23 @@ footer {
   position: relative;
   z-index: 1; /* Por encima del fondo fijo */
 }
+.App {
+  width: 100%;
+  background: transparent;
+}
+
+/* Forzamos nitidez y transparencia absoluta en toda la web */
+section,
+footer,
+div[class*="-section"],
+.disco-container,
+.about-container {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+}
+
+section {
+  padding: 120px 20px;
+}
