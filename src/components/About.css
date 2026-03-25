@@ -1,33 +1,34 @@
 .about-section {
-  background-color: #0a0a0a; /* Un fondo súper oscuro para mantener la vibra */
-  color: #f0f0f0;
-  padding: 80px 20px; /* Espacio arriba/abajo y a los lados */
+  background-color: #050505;
+  color: #e0e0e0;
+  padding: 150px 20px;
   display: flex;
-  justify-content: center; /* Centra todo en la pantalla */
+  justify-content: center;
 }
 
 .about-container {
-  max-width: 1000px; /* Evita que el texto se estire demasiado en monitores grandes */
+  max-width: 1000px;
   display: flex;
-  gap: 50px; /* Crea un espacio elegante entre el texto y la foto */
-  align-items: center; /* Alinea ambas columnas al centro verticalmente */
+  gap: 50px;
+  align-items: center;
 }
 
 .about-text {
-  flex: 1; /* Le dice que ocupe exactamente la mitad del espacio */
+  flex: 1;
 }
 
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #e0e0e0;
+  letter-spacing: 8px;
 }
 
 .about-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 15px;
-  color: #bababa; /* Un gris claro para que no canse la vista */
+  color: #a3a3a3;
 }
 
 .about-image-container {
@@ -59,9 +60,15 @@
 .carousel-photo {
   width: 100%;
   height: 350px;
-  object-fit: cover; /* Recorta la foto perfecto sin deformarla */
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  filter: grayscale(100%);
+  transition: filter 0.8s ease;
+}
+
+.carousel-photo:hover {
+  filter: grayscale(0%);
 }
 
 /* --- Estilos para personalizar las flechas y puntitos de Swiper --- */

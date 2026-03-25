@@ -2,7 +2,7 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero-container">
+    <section className="hero-container fade-in">
       {/* 1. Este div tendrá la imagen de fondo y la animación */}
       <div className="hero-background"></div>
 

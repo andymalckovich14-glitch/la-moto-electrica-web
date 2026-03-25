@@ -7,7 +7,7 @@ function Footer() {
   const whatsapp2 = "https://wa.me/584164941839";
 
   return (
-    <footer className="footer-section">
+    <footer className="footer-section fade-in">
       <div className="footer-container">
         {/* REDES SOCIALES CON LOGOS MINIMALISTAS */}
         <div className="footer-social">

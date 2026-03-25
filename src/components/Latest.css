@@ -1,9 +1,7 @@
 .latest-section {
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  padding: 80px 20px;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 150px 20px;
 }
 
 .latest-container {
@@ -19,10 +17,20 @@
 .latest-header h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 8px;
 }
 
 .player-subtitle {
-  color: #aaaaaa;
+  color: #a3a3a3;
   font-size: 1.1rem;
+}
+
+/* Elfsight widget override for grayscale if possible (may be blocked by shadow dom but we try) */
+.elfsight-app-6e7ad477-31f9-4b75-b29d-1d3f700c654c {
+  filter: grayscale(100%);
+  transition: filter 0.8s ease;
+}
+
+.elfsight-app-6e7ad477-31f9-4b75-b29d-1d3f700c654c:hover {
+  filter: grayscale(0%);
 }

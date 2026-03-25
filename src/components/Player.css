@@ -10,20 +10,21 @@
 
 /* El marco del reproductor */
 .player-spotify-wrapper {
-  width: 400px; /* Lo hacemos un poco más compacto para la esquina */
-  max-width: 85vw; /* Evita que se salga en pantallas pequeñas */
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
+  width: 400px;
+  max-width: 85vw;
+  background-color: #121212;
+  border-radius: 0;
   padding: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease;
+  filter: grayscale(100%);
 }
 
 .player-spotify-wrapper:hover {
   transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.2);
+  filter: grayscale(0%);
 }
 
 /* Ajuste para que en móviles muy pequeños se mantenga bien posicionado */

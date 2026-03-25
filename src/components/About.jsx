@@ -20,7 +20,7 @@ import logo from "../assets/logo.png";
 
 function About() {
   return (
-    <section className="about-section">
+    <section className="about-section fade-in">
       <div className="about-container">
         {/* Columna Izquierda: El Texto */}
         <div className="about-text">
