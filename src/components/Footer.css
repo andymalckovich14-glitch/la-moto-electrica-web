@@ -1,11 +1,8 @@
 .footer-section {
-  padding: 60px 20px 40px;
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 150px 20px 40px;
+  background-color: #050505;
   text-align: center;
-  border-top: none;
-  margin-top: -1px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-container {

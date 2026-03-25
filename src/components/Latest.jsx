@@ -18,7 +18,7 @@ function Latest() {
   }, []);
 
   return (
-    <section className="latest-section">
+    <section className="latest-section fade-in">
       <div className="latest-container">
         <div className="latest-header">
           <h2>Últimas Publicaciones</h2>

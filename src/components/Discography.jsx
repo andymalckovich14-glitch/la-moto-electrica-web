@@ -70,7 +70,7 @@ function Discography() {
   ];
 
   return (
-    <section className="disco-section">
+    <section className="disco-section fade-in">
       <div className="disco-container">
         <h2 className="disco-title">Discografía</h2>
         <div className="disco-grid">

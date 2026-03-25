@@ -9,12 +9,35 @@ body,
 #root {
   width: 100%;
   min-height: 100vh;
-  background-color: #050505; /* Fondo de seguridad */
-  color: white;
+  background-color: #050505;
+  color: #e0e0e0;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
 body {
-  background: transparent;
+  background-color: #050505;
+}
+
+p {
+  color: #a3a3a3;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 8px;
+  color: #e0e0e0;
+}
+
+/* Scroll Animation Class */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
 }
