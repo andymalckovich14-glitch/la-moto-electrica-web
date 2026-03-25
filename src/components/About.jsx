@@ -1,0 +1,87 @@
+import "./About.css";
+// Importamos Swiper y sus herramientas
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+// Importamos los estilos obligatorios de Swiper
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// IMPORTA TUS FOTOS AQUÍ (Asegúrate de que los nombres coincidan con los tuyos en la carpeta assets)
+import foto1 from "../assets/foto1.jpg";
+import foto2 from "../assets/foto2.jpg";
+import foto3 from "../assets/foto3.jpg";
+import foto4 from "../assets/foto4.jpg";
+import foto5 from "../assets/foto5.jpg";
+
+function About() {
+  return (
+    <section className="about-section">
+      <div className="about-container">
+        {/* Columna Izquierda: El Texto */}
+        <div className="about-text">
+          <h2>Nosotros</h2>
+          <p>
+            Desde Anaco, Venezuela, <strong>La Moto Eléctrica</strong> Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Sequi, saepe
+            necessitatibus aperiam a porro aut debitis. Saepe alias deleniti
+            rem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            soluta debitis, iure voluptas necessitatibus odio incidunt saepe
+            expedita molestias quia!
+          </p>
+        </div>
+
+        {/* Columna Derecha: EL CARRUSEL */}
+        <div className="about-image-container">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            className="mySwiper"
+          >
+            {/* Diapositiva 1 */}
+            <SwiperSlide>
+              <img
+                src={foto1}
+                alt="La Moto Eléctrica"
+                className="carousel-photo"
+              />
+            </SwiperSlide>
+
+            {/* Diapositiva 2 */}
+            <SwiperSlide>
+              <img src={foto2} alt="Detalle" className="carousel-photo" />
+            </SwiperSlide>
+
+            {/* Diapositiva 3 */}
+            <SwiperSlide>
+              <img src={foto3} alt="Detalle" className="carousel-photo" />
+            </SwiperSlide>
+
+            {/* Diapositiva 4 */}
+            <SwiperSlide>
+              <img src={foto4} alt="Detalle" className="carousel-photo" />
+            </SwiperSlide>
+
+            {/* Diapositiva 5 */}
+            <SwiperSlide>
+              <img src={foto5} alt="Detalle" className="carousel-photo" />
+            </SwiperSlide>
+
+            {/* Puedes copiar y pegar más bloques <SwiperSlide> si tienes más fotos */}
+          </Swiper>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default About;

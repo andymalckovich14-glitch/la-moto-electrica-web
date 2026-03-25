@@ -1,0 +1,28 @@
+.player-section {
+  background-color: #1a1a1a; /* Un gris un poquito más claro que el del About para que resalte */
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.player-container {
+  max-width: 700px; /* Evitamos que el reproductor se estire demasiado en PC */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+.player-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.player-subtitle {
+  color: #aaaaaa;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.iframe-container {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra elegante detrás del reproductor */
+  border-radius: 12px;
+}
