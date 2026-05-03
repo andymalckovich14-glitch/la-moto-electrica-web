@@ -1,45 +1,52 @@
 import "./Footer.css";
 import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 
-function Footer() {
+const SOCIAL_LINKS = [
+  {
+    href: "https://instagram.com/tu_usuario",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://open.spotify.com/artist/1VrmAzIcE04WB7gMS6fiM9",
+    icon: FaSpotify,
+    label: "Spotify",
+  },
+  {
+    href: "https://youtube.com/@tu_canal",
+    icon: FaYoutube,
+    label: "YouTube",
+  },
+];
+
+export default function Footer() {
   const whatsapp1 = "https://wa.me/584165800779";
   const whatsapp2 = "https://wa.me/584164941839";
 
   return (
-    <footer className="footer-section">
+    <footer className="footer-section" id="contacto">
       <div className="footer-container">
+
+        {/* ── Divider superior ── */}
+        <div className="footer-divider" />
+
+        {/* ── Redes sociales ── */}
         <div className="footer-social">
-          <a
-            href="https://instagram.com/tu_usuario"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <FaInstagram className="social-icon" />
-            <span>Instagram</span>
-          </a>
-
-          <a
-            href="http://googleusercontent.com/spotify.com/5"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <FaSpotify className="social-icon" />
-            <span>Spotify</span>
-          </a>
-
-          <a
-            href="https://youtube.com/@tu_canal"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <FaYoutube className="social-icon" />
-            <span>YouTube</span>
-          </a>
+          {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="social-link"
+            >
+              <Icon className="social-icon" />
+              <span>{label}</span>
+            </a>
+          ))}
         </div>
 
+        {/* ── Contacto ── */}
         <div className="footer-contact">
           <h3>Booking & Contacto</h3>
           <div className="whatsapp-links">
@@ -64,15 +71,14 @@ function Footer() {
           </div>
         </div>
 
+        {/* ── Copyright ── */}
         <div className="footer-bottom">
           <p>
-            © {new Date().getFullYear()} La Moto Eléctrica. Hecho en Anaco,
-            Venezuela.
+            © {new Date().getFullYear()} La Moto Eléctrica · Anaco, Venezuela
           </p>
         </div>
+
       </div>
     </footer>
   );
 }
-
-export default Footer;

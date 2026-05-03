@@ -1,20 +1,147 @@
-* {
+/* ====================================================
+   DESIGN TOKENS — La Moto Eléctrica
+   ==================================================== */
+:root {
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  /* Color Palette */
+  --color-bg:        #060608;
+  --color-surface:   rgba(255, 255, 255, 0.03);
+  --color-border:    rgba(255, 255, 255, 0.07);
+  --color-border-hover: rgba(255, 255, 255, 0.25);
+
+  --color-text-primary:  #f0ede8;
+  --color-text-muted:    rgba(240, 237, 232, 0.45);
+  --color-text-subtle:   rgba(240, 237, 232, 0.2);
+
+  --color-accent:        rgba(255, 255, 255, 0.9);
+
+  /* Spacing */
+  --spacing-section: 120px 24px;
+  --spacing-section-sm: 80px 20px;
+
+  /* Easing */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: ease-out;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* ====================================================
+   RESET & BASE
+   ==================================================== */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
   width: 100%;
   min-height: 100vh;
-  background-color: #050505; /* Fondo de seguridad */
-  color: white;
-  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg); /* fallback cuando no hay imagen */
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
 body {
-  background: transparent;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent; /* CRÍTICO: deja visible el hero-background (z-index:-1) */
+  overflow-x: hidden;
+}
+
+/* ====================================================
+   GLOBAL TYPOGRAPHY
+   ==================================================== */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+/* ── Tratamiento de títulos de sección ── */
+/* Uso: añadir clase "section-heading" a cualquier h2 centrado */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.section-heading::before,
+.section-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  max-width: 80px;
+}
+
+.section-heading::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+}
+
+.section-heading::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 100%
+  );
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+
+/* ====================================================
+   GRAIN TEXTURE OVERLAY
+   Añade textura analógica de película sobre toda la página.
+   pointer-events: none — no interfiere con clicks ni cursor.
+   ==================================================== */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+/* ====================================================
+   SCROLLBAR
+   ==================================================== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

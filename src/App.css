@@ -1,31 +1,20 @@
-.App {
+/* ====================================================
+   LAYOUT
+   ==================================================== */
+main {
   width: 100%;
-  background: transparent !important;
-}
-
-section,
-footer {
-  background-color: transparent !important;
-  padding: 100px 20px;
   position: relative;
   z-index: 1;
-}
-.App {
-  width: 100%;
-  background: transparent;
-}
-
-section,
-footer,
-div[class*="-section"],
-.disco-container,
-.about-container {
-  background-color: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
+  background-color: #060608;
 }
 
 section {
-  padding: 120px 20px;
+  padding: var(--spacing-section);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-section-sm);
+  }
 }

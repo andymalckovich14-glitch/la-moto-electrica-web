@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  height: 64px;
+
+  background: transparent;
+  transition:
+    background 0.45s ease,
+    backdrop-filter 0.45s ease,
+    border-color 0.45s ease;
+
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(6, 6, 8, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+.navbar-logo {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease, opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-logo:hover {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* ── Links ── */
+.navbar-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+  }
+
+  .navbar-logo {
+    font-size: 0.75rem;
+  }
+}

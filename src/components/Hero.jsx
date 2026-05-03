@@ -1,16 +1,12 @@
 import "./Hero.css";
+import HeroContent from "./HeroContent";
 
-function Hero() {
+// Server Component — solo estructura + layout
+export default function Hero() {
   return (
     <section className="hero-container">
-      <div className="hero-background"></div>
-
-      <div className="hero-content">
-        <h1 className="hero-title">La Moto Eléctrica</h1>
-        <p className="hero-subtitle">Shoegaze / Post-Rock</p>
-      </div>
+      <div className="hero-background" aria-hidden="true" />
+      <HeroContent />
     </section>
   );
 }
-
-export default Hero;
