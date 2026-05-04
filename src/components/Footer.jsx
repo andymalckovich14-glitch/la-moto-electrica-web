@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./Footer.css";
 import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 
@@ -29,6 +30,20 @@ export default function Footer() {
 
         {/* ── Divider superior ── */}
         <div className="footer-divider" />
+
+        {/* ── CTA Contrataciones ── */}
+        <div className="footer-booking-cta">
+          <p className="footer-booking-label">¿Quieres que toquemos en tu evento?</p>
+          <Link href="/contrataciones" className="footer-booking-btn">
+            Contrataciones desde la web
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
+        </div>
 
         {/* ── Redes sociales ── */}
         <div className="footer-social">

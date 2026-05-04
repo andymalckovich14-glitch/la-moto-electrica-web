@@ -1,6 +1,6 @@
 # La Moto Eléctrica - Official Website
 
-Sitio web oficial de la banda de Shoegaze / Post-Rock **La Moto Eléctrica** (Anaco, Venezuela). 
+Sitio web oficial de la banda de Shoegaze / Post-Rock **La Moto Eléctrica** (Anaco, Venezuela).
 Desarrollado con Next.js 16 (App Router), Framer Motion y Vanilla CSS.
 
 ## 🚀 Tecnologías
@@ -13,11 +13,14 @@ Desarrollado con Next.js 16 (App Router), Framer Motion y Vanilla CSS.
 ## 💻 Desarrollo Local
 
 1. Instala las dependencias:
+   ~
+
    ```bash
    npm install
    ```
 
 2. Inicia el servidor de desarrollo:
+
    ```bash
    npm run dev
    ```
