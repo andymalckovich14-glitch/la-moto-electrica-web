@@ -24,7 +24,7 @@ Desarrollado con Next.js 16 (App Router), Framer Motion, Vanilla CSS y base de d
    Crea un archivo `.env.local` en la raíz del proyecto y agrega tu cadena de conexión a Neon Database:
    ```env
    DATABASE_URL=postgresql://usuario:contraseña@host.neon.tech/dbname?sslmode=require
-   PASSWORD_LA_MOTO=mibanda123
+   PASSWORD_LA_MOTO=xxxxxxxxxx
    ```
 
 3. (Opcional) Operaciones de Base de Datos:
