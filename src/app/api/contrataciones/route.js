@@ -1,5 +1,5 @@
-import { db } from "../../db/index.js";
-import { contrataciones } from "../../db/schema.js";
+import { db } from "../../../db/index.js";
+import { contrataciones } from "../../../db/schema.js";
 
 export async function POST(request) {
   try {
