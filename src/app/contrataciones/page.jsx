@@ -26,11 +26,12 @@ export default function ContratacionesPage() {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // Limpiar error al corregir
     if (errors[name]) {
       setErrors((prev) => {
         const next = { ...prev };
@@ -38,6 +39,7 @@ export default function ContratacionesPage() {
         return next;
       });
     }
+    if (apiError) setApiError("");
   };
 
   const validate = () => {
@@ -58,24 +60,47 @@ export default function ContratacionesPage() {
     return errs;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const errs = validate();
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
-      // Scroll al primer error
-      const firstKey = Object.keys(errs)[0];
-      document.querySelector(`[name="${firstKey}"]`)?.focus();
+      document.querySelector(`[name="${Object.keys(errs)[0]}"]`)?.focus();
       return;
     }
+
     setErrors({});
-    setSubmitted(true);
+    setLoading(true);
+    setApiError("");
+
+    try {
+      const res = await fetch("/api/contrataciones", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setApiError(data.error || "Ocurrió un error. Intenta de nuevo.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setApiError("Error de conexión. Verifica tu internet e intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
     setForm(initialForm);
     setErrors({});
     setSubmitted(false);
+    setApiError("");
   };
 
   // ── Estado: enviado ──
@@ -135,6 +160,14 @@ export default function ContratacionesPage() {
 
       {/* ── Form ── */}
       <form className="booking-form" onSubmit={handleSubmit} noValidate>
+
+        {/* Error de API */}
+        {apiError && (
+          <div className="api-error-banner">
+            <span>⚠ {apiError}</span>
+          </div>
+        )}
+
         {/* Nombre */}
         <div className={`field ${errors.nombre ? "field--error" : ""}`}>
           <label htmlFor="nombre">Nombre completo</label>
@@ -146,6 +179,7 @@ export default function ContratacionesPage() {
             onChange={handleChange}
             placeholder="Tu nombre o el de tu organización"
             autoComplete="name"
+            disabled={loading}
           />
           {errors.nombre && <span className="field-error">{errors.nombre}</span>}
         </div>
@@ -161,11 +195,12 @@ export default function ContratacionesPage() {
             onChange={handleChange}
             placeholder="correo@ejemplo.com"
             autoComplete="email"
+            disabled={loading}
           />
           {errors.email && <span className="field-error">{errors.email}</span>}
         </div>
 
-        {/* Fecha + Lugar (grid 2 cols) */}
+        {/* Fecha + Lugar */}
         <div className="field-row">
           <div className={`field ${errors.fecha ? "field--error" : ""}`}>
             <label htmlFor="fecha">Fecha del evento</label>
@@ -175,6 +210,7 @@ export default function ContratacionesPage() {
               name="fecha"
               value={form.fecha}
               onChange={handleChange}
+              disabled={loading}
             />
             {errors.fecha && <span className="field-error">{errors.fecha}</span>}
           </div>
@@ -189,6 +225,7 @@ export default function ContratacionesPage() {
               onChange={handleChange}
               placeholder="Ciudad, Venue, Dirección"
               autoComplete="off"
+              disabled={loading}
             />
             {errors.lugar && <span className="field-error">{errors.lugar}</span>}
           </div>
@@ -202,12 +239,11 @@ export default function ContratacionesPage() {
             name="tipoEvento"
             value={form.tipoEvento}
             onChange={handleChange}
+            disabled={loading}
           >
             <option value="">Selecciona una opción</option>
             {EVENT_TYPES.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
+              <option key={t} value={t}>{t}</option>
             ))}
           </select>
           {errors.tipoEvento && (
@@ -226,6 +262,7 @@ export default function ContratacionesPage() {
                 value="si"
                 checked={form.backline === "si"}
                 onChange={handleChange}
+                disabled={loading}
               />
               <span className="radio-label">Sí, contamos con equipo</span>
             </label>
@@ -236,6 +273,7 @@ export default function ContratacionesPage() {
                 value="no"
                 checked={form.backline === "no"}
                 onChange={handleChange}
+                disabled={loading}
               />
               <span className="radio-label">No, la banda trae todo</span>
             </label>
@@ -252,9 +290,7 @@ export default function ContratacionesPage() {
               errors.backlineDetalle ? "field--error" : ""
             }`}
           >
-            <label htmlFor="backlineDetalle">
-              ¿Con qué equipo cuentas?
-            </label>
+            <label htmlFor="backlineDetalle">¿Con qué equipo cuentas?</label>
             <textarea
               id="backlineDetalle"
               name="backlineDetalle"
@@ -262,6 +298,7 @@ export default function ContratacionesPage() {
               onChange={handleChange}
               placeholder="Ej: Amplificadores, batería, sistema de sonido..."
               rows={3}
+              disabled={loading}
             />
             {errors.backlineDetalle && (
               <span className="field-error">{errors.backlineDetalle}</span>
@@ -279,27 +316,41 @@ export default function ContratacionesPage() {
             onChange={handleChange}
             placeholder="Cualquier detalle que consideres importante..."
             rows={4}
+            disabled={loading}
           />
         </div>
 
         {/* Submit */}
-        <button type="submit" className="booking-submit">
-          Enviar solicitud
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
+        <button
+          type="submit"
+          className={`booking-submit ${loading ? "booking-submit--loading" : ""}`}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <span className="submit-spinner" />
+              Enviando...
+            </>
+          ) : (
+            <>
+              Enviar solicitud
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </>
+          )}
         </button>
       </form>
     </div>

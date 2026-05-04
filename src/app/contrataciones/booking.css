@@ -253,6 +253,38 @@
   transform: translateY(0);
 }
 
+/* ── Loading state ── */
+.booking-submit--loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.submit-spinner {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── API error banner ── */
+.api-error-banner {
+  padding: 14px 18px;
+  border: 1px solid rgba(220, 70, 70, 0.35);
+  border-radius: 3px;
+  background: rgba(220, 70, 70, 0.06);
+  color: rgba(220, 100, 100, 0.9);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  animation: fadeSlideDown 0.3s ease;
+}
+
 /* ====================================================
    SUCCESS STATE
    ==================================================== */
