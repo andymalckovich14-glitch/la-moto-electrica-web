@@ -16,12 +16,46 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "La Moto Eléctrica",
-  description: "Shoegaze / Post-Rock desde Anaco, Venezuela. Banda originaria de Anaco, Venezuela.",
+  metadataBase: new URL("https://la-moto-electrica-web.vercel.app"),
+  title: {
+    default: "La Moto Eléctrica | Sitio Oficial",
+    template: "%s | La Moto Eléctrica",
+  },
+  description: "Banda de Shoegaze y Post-Rock originaria de Anaco, Venezuela. Explora nuestra discografía, últimas noticias y contrataciones.",
+  keywords: ["shoegaze", "post-rock", "banda", "venezuela", "anaco", "la moto electrica", "música independiente", "música venezolana"],
+  authors: [{ name: "La Moto Eléctrica" }],
   openGraph: {
-    title: "La Moto Eléctrica",
-    description: "Shoegaze / Post-Rock desde Anaco, Venezuela.",
+    title: "La Moto Eléctrica | Shoegaze & Post-Rock",
+    description: "Paisajes sonoros desde Anaco, Venezuela. Escucha nuestros 7 lanzamientos, conoce a la banda y contacta para eventos.",
+    url: "https://la-moto-electrica-web.vercel.app",
+    siteName: "La Moto Eléctrica",
+    images: [
+      {
+        url: "/images/close.jpg", // Foto que saldrá de portada al compartir el link
+        width: 1200,
+        height: 630,
+        alt: "La Moto Eléctrica - Banda de Shoegaze",
+      },
+    ],
+    locale: "es_VE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "La Moto Eléctrica | Oficial",
+    description: "Shoegaze y Post-Rock desde Anaco, Venezuela.",
+    images: ["/images/close.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
