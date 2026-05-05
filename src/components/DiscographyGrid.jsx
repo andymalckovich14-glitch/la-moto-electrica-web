@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useMounted } from "../hooks/useMounted";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -47,8 +48,7 @@ export default function DiscographyGrid({ albums }) {
                 : undefined
             }
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={album.cover} alt={album.title} className="disco-cover" loading="lazy" />
+            <Image src={album.cover} alt={album.title} className="disco-cover" width={300} height={300} />
             <div className="disco-overlay">
               <div className="disco-info">
                 <p className="disco-type">{album.type}</p>

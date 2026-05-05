@@ -14,8 +14,16 @@
 }
 
 .footer-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 56px;
 }
 
 /* ── Divider ── */
@@ -32,8 +40,8 @@
 
 /* ── CTA Contrataciones ── */
 .footer-booking-cta {
-  text-align: center;
-  margin-bottom: 56px;
+  text-align: left;
+  flex: 1;
 }
 
 .footer-booking-label {
@@ -76,8 +84,8 @@
 .footer-social {
   display: flex;
   justify-content: center;
-  gap: 56px;
-  margin-bottom: 56px;
+  gap: 40px;
+  flex: 1;
 }
 
 .social-link {
@@ -109,7 +117,8 @@
 
 /* ── Contacto ── */
 .footer-contact {
-  margin-bottom: 48px;
+  flex: 1;
+  text-align: right;
 }
 
 .footer-contact h3 {
@@ -124,8 +133,8 @@
 
 .whatsapp-links {
   display: flex;
-  justify-content: center;
-  gap: 56px;
+  justify-content: flex-end;
+  gap: 32px;
 }
 
 .wa-link {
@@ -173,6 +182,24 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 850px) {
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 56px;
+  }
+
+  .footer-booking-cta,
+  .footer-contact {
+    text-align: center;
+  }
+
+  .whatsapp-links {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 600px) {
   .footer-social {
     gap: 36px;

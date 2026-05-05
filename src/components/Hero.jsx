@@ -1,4 +1,3 @@
-import "./Hero.css";
 import HeroContent from "./HeroContent";
 
 // Server Component — solo estructura + layout

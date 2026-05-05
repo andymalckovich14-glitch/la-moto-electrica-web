@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./Navbar.css";
 
 const NAV_LINKS = [
   { label: "Nosotros", id: "nosotros" },

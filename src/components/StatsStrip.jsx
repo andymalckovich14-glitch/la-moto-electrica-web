@@ -1,10 +1,10 @@
-import "./StatsStrip.css";
 
 const STATS = [
-  { value: "7", label: "Lanzamientos" },
-  { value: "2022", label: "Desde" },
-  { value: "Anaco", label: "Venezuela" },
-  { value: "Shoegaze", label: "/ Post-Rock" },
+  { value: "Makioka", label: "Voz" },
+  { value: "Edegar Marcano", label: "Bajo" },
+  { value: "Andy Mainlander", label: "Guitarra / Sintetizadores" },
+  { value: "Nicolás Rojas", label: "Batería" },
+  { value: "Jesús Plaza", label: "Guitarra" },
 ];
 
 export default function StatsStrip() {

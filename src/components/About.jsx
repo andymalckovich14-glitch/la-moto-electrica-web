@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useMounted } from "../hooks/useMounted";
-import "./About.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -58,11 +58,12 @@ export default function About() {
           </motion.p>
 
           <motion.div {...anim(-32, 0.32)}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/logo.png"
               alt="Logo La Moto Eléctrica"
               className="about-logo"
+              width={100}
+              height={100}
             />
           </motion.div>
         </div>
@@ -81,12 +82,12 @@ export default function About() {
           >
             {fotos.map((foto, index) => (
               <SwiperSlide key={index}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={foto.src}
                   alt={foto.alt}
                   className="carousel-photo"
-                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
               </SwiperSlide>
             ))}

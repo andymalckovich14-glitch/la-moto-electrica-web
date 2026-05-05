@@ -1,4 +1,3 @@
-import "./Player.css";
 import { FaSpotify } from "react-icons/fa";
 
 const spotifyUrl =

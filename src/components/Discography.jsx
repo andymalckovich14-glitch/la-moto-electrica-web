@@ -1,4 +1,3 @@
-import "./Discography.css";
 import DiscographyGrid from "./DiscographyGrid";
 
 // Server Component — datos estáticos + layout

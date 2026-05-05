@@ -22,8 +22,8 @@
 /* ── Grid ── */
 .disco-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 /* ── Tarjeta ── */
@@ -34,7 +34,6 @@
   overflow: hidden;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--color-border);
-  max-width: 220px;
   width: 100%;
   margin: 0 auto;
   cursor: pointer;
@@ -64,19 +63,13 @@
 .disco-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(6, 6, 8, 0.92) 0%,
-    rgba(6, 6, 8, 0.5) 50%,
-    transparent 100%
-  );
+  background: rgba(6, 6, 8, 0.75);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 18px;
   opacity: 0;
   transition: opacity 0.45s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 
 .disco-card:hover .disco-overlay {
@@ -203,5 +196,19 @@
 .disco-spotify-btn svg {
   color: #1db954;
   flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 850px) {
+  .disco-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .disco-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 

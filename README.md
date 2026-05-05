@@ -16,12 +16,14 @@ Desarrollado con Next.js 16 (App Router), Framer Motion, Vanilla CSS y base de d
 ## 💻 Desarrollo Local
 
 1. Instala las dependencias:
+
    ```bash
    npm install
    ```
 
 2. Configura las variables de entorno:
    Crea un archivo `.env.local` en la raíz del proyecto y agrega tu cadena de conexión a Neon Database:
+
    ```env
    DATABASE_URL=postgresql://usuario:contraseña@host.neon.tech/dbname?sslmode=require
    PASSWORD_LA_MOTO=xxxxxxxxxx
@@ -33,6 +35,7 @@ Desarrollado con Next.js 16 (App Router), Framer Motion, Vanilla CSS y base de d
    - Abrir Drizzle Studio (interfaz visual): `npm run dbs`
 
 4. Inicia el servidor de desarrollo:
+
    ```bash
    npm run dev
    ```
@@ -46,6 +49,7 @@ Al conectar el repositorio a Vercel, el framework "Next.js" será detectado auto
 
 **⚠️ PASO CRÍTICO PARA EL DESPLIEGUE:**
 Debes configurar la variable de entorno de la base de datos en Vercel.
+
 1. Ve a tu proyecto en Vercel -> Settings -> Environment Variables.
 2. Agrega una nueva variable:
    - **Key:** `DATABASE_URL`
@@ -56,8 +60,9 @@ Debes configurar la variable de entorno de la base de datos en Vercel.
 ## 🔒 Panel de Administración
 
 El sitio incluye una zona privada para revisar y gestionar las solicitudes de contratación.
+
 - **Acceso:** Navega manualmente a `/admin`. (No hay enlaces públicos por seguridad).
 - **Autenticación:** Protegido por Server Actions y Middleware. Requiere la contraseña definida en la variable de entorno `PASSWORD_LA_MOTO`.
-- **Funcionalidades:** 
+- **Funcionalidades:**
   - Listado de contrataciones obtenidas en tiempo real desde Neon mediante Drizzle ORM.
   - Exportación de todas las solicitudes a un archivo Excel (`.xlsx`) con un solo clic.

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./ScrollProgress.css";
 
 export default function ScrollProgress() {
   const [progress, setProgress] = useState(0);

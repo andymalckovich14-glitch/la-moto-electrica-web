@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@import "./app/contrataciones/booking.css";
+@import "./components/About.css";
+@import "./components/Discography.css";
+@import "./components/Footer.css";
+@import "./components/Hero.css";
+@import "./components/Navbar.css";
+@import "./components/Player.css";
+@import "./components/ScrollProgress.css";
+@import "./components/StatsStrip.css";
+
 
 /* ====================================================
    DESIGN TOKENS — La Moto Eléctrica
@@ -21,8 +31,8 @@
   --color-accent:        rgba(255, 255, 255, 0.9);
 
   /* Spacing */
-  --spacing-section: 120px 24px;
-  --spacing-section-sm: 80px 20px;
+  --spacing-section: 60px 24px;
+  --spacing-section-sm: 40px 20px;
 
   /* Easing */
   --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
@@ -47,22 +57,18 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-html {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--color-bg); /* fallback cuando no hay imagen */
+  background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
-  overflow-x: hidden;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
-  background: transparent; /* CRÍTICO: deja visible el hero-background (z-index:-1) */
-  overflow-x: hidden;
+  background: transparent;
+  overflow-x: clip;
 }
 
 /* ====================================================
